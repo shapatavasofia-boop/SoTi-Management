@@ -1,0 +1,42 @@
+export const brand = {
+  name: "SoTi Management",
+  instagram: "https://www.instagram.com/sotimanagement/",
+  email: "info@sotimanagement.com", // <- change this
+};
+
+export const services = [
+  {
+    title: "Tennis Consulting",
+    desc: "Scheduling, tournament planning, performance strategy, and on-court development support.",
+  },
+  {
+    title: "Fitness Consulting",
+    desc: "Athlete-specific strength & conditioning planning, monitoring, and progression.",
+  },
+  {
+    title: "Nutrition Consulting",
+    desc: "Simple, sustainable nutrition systems to support training, recovery, and travel.",
+  },
+  {
+    title: "Naturopath & Osteopath Services",
+    desc: "Integrative care to support recovery, resilience, and long-term health.",
+  },
+  {
+    title: "Travel Consulting",
+    desc: "Logistics planning, smart routing, and travel routines that protect performance.",
+  },
+];
+
+// Replace placeholders with real names/photos later (you can add image URLs).
+export const players = [
+  { name: "Player Name", role: "WTA / ITF", note: "Singles • Doubles", country: "—" },
+  { name: "Player Name", role: "WTA / ITF", note: "Singles • Doubles", country: "—" },
+  { name: "Player Name", role: "Junior / Pro", note: "Development", country: "—" },
+];
+
+export const team = [
+  { name: "Team Member", title: "Founder / Athlete Manager", note: "Performance + strategy" },
+  { name: "Team Member", title: "Fitness Consultant", note: "Strength & conditioning" },
+  { name: "Team Member", title: "Nutrition Consultant", note: "Fuel + recovery systems" },
+  { name: "Team Member", title: "Osteopath / Naturopath", note: "Integrative care" },
+];
