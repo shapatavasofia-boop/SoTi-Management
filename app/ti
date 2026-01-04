@@ -1,0 +1,29 @@
+import { services } from "@/components/content";
+
+export default function ServicesPage() {
+  return (
+    <section className="mx-auto max-w-6xl px-5 py-14">
+      <h1 className="text-3xl font-semibold">Services</h1>
+      <p className="mt-3 max-w-2xl text-sm text-white/70">
+        A complete performance support system: tennis, fitness, nutrition, integrative care, and
+        travel consulting — designed to keep athletes consistent through the season.
+      </p>
+
+      <div className="mt-10 grid gap-5 md:grid-cols-2">
+        {services.map((s) => (
+          <div
+            key={s.title}
+            className="rounded-2xl border border-white/10 bg-white/5 p-7 shadow-luxe"
+          >
+            <div className="text-lg font-semibold">{s.title}</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">{s.desc}</p>
+            <div className="mt-5 h-px w-full hairline opacity-60" />
+            <p className="mt-4 text-xs text-white/60">
+              Available as one-off consulting or ongoing monthly support.
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
