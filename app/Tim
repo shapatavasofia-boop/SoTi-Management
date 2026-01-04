@@ -1,0 +1,38 @@
+import { players } from "@/components/content";
+
+export default function PlayersPage() {
+  return (
+    <section className="mx-auto max-w-6xl px-5 py-14">
+      <h1 className="text-3xl font-semibold">Players</h1>
+      <p className="mt-3 max-w-2xl text-sm text-white/70">
+        Our athletes. Replace the placeholders with names, rankings, bios, and photos whenever
+        you’re ready.
+      </p>
+
+      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {players.map((p, idx) => (
+          <div
+            key={idx}
+            className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-luxe"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="text-base font-semibold">{p.name}</div>
+                <div className="mt-1 text-xs text-gold-400">{p.role}</div>
+              </div>
+              <div className="rounded-full border border-gold-500/40 px-3 py-1 text-[11px] text-white/75">
+                {p.country}
+              </div>
+            </div>
+            <p className="mt-4 text-sm text-white/70">{p.note}</p>
+
+            <div className="mt-5 h-px w-full hairline opacity-60" />
+            <p className="mt-4 text-xs text-white/60">
+              Add: photo, ranking, highlight results, and sponsor logos.
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
