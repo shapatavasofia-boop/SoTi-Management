@@ -1,0 +1,25 @@
+import { team } from "@/components/content";
+
+export default function TeamPage() {
+  return (
+    <section className="mx-auto max-w-6xl px-5 py-14">
+      <h1 className="text-3xl font-semibold">Team</h1>
+      <p className="mt-3 max-w-2xl text-sm text-white/70">
+        The people behind the system — performance, recovery, and logistics.
+      </p>
+
+      <div className="mt-10 grid gap-5 md:grid-cols-2">
+        {team.map((t, idx) => (
+          <div
+            key={idx}
+            className="rounded-2xl border border-white/10 bg-white/5 p-7 shadow-luxe"
+          >
+            <div className="text-lg font-semibold">{t.name}</div>
+            <div className="mt-1 text-sm text-gold-400">{t.title}</div>
+            <p className="mt-3 text-sm text-white/70">{t.note}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
