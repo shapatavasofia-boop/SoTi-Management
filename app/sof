@@ -1,0 +1,129 @@
+import "./globals.css";
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "SoTi Management — Athlete Management & Consulting",
+  description:
+    "SoTi Management is an athlete management company offering tennis, fitness, nutrition, travel consulting, and integrative care including naturopath and osteopath services.",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  openGraph: {
+    title: "SoTi Management",
+    description:
+      "Athlete management & consulting: tennis, fitness, nutrition, travel, and integrative care.",
+    type: "website",
+  },
+};
+
+const nav = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/players", label: "Players" },
+  { href: "/team", label: "Team" },
+  { href: "/contact", label: "Contact" },
+];
+
+function Header() {
+  return (
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-navy-950/70 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+        <Link href="/" className="group flex items-baseline gap-2">
+          <span className="text-lg font-semibold tracking-wide">SoTi</span>
+          <span className="text-lg font-light tracking-widest text-white/80">
+            Management
+          </span>
+          <span className="ml-2 hidden h-[2px] w-14 bg-gold-500/80 sm:inline-block" />
+        </Link>
+
+        <nav className="hidden items-center gap-6 md:flex">
+          {nav.map((n) => (
+            <Link
+              key={n.href}
+              href={n.href}
+              className="text-sm text-white/80 transition hover:text-white"
+            >
+              {n.label}
+            </Link>
+          ))}
+          <a
+            href="https://www.instagram.com/sotimanagement/"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-gold-500/50 px-4 py-2 text-sm text-gold-400 transition hover:border-gold-400 hover:text-gold-400"
+          >
+            Instagram
+          </a>
+        </nav>
+
+        <div className="md:hidden">
+          <a
+            href="https://www.instagram.com/sotimanagement/"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-gold-500/50 px-4 py-2 text-sm text-gold-400"
+          >
+            IG
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-white/10">
+      <div className="mx-auto max-w-6xl px-5 py-10">
+        <div className="grid gap-8 md:grid-cols-3">
+          <div>
+            <div className="text-base font-semibold">SoTi Management</div>
+            <p className="mt-2 text-sm text-white/70">
+              Calm, precise support for athletes — performance, health, and logistics,
+              built around long-term results.
+            </p>
+          </div>
+
+          <div className="text-sm">
+            <div className="font-semibold text-white/90">Services</div>
+            <ul className="mt-2 space-y-1 text-white/70">
+              <li>Tennis Consulting</li>
+              <li>Fitness Consulting</li>
+              <li>Nutrition Consulting</li>
+              <li>Naturopath & Osteopath Services</li>
+              <li>Travel Consulting</li>
+            </ul>
+          </div>
+
+          <div className="text-sm">
+            <div className="font-semibold text-white/90">Connect</div>
+            <a
+              className="mt-2 inline-block text-white/70 hover:text-white"
+              href="https://www.instagram.com/sotimanagement/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram → @sotimanagement
+            </a>
+            <div className="mt-2 text-white/60">
+              © {new Date().getFullYear()} SoTi Management. All rights reserved.
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 h-px w-full hairline opacity-60" />
+      </div>
+    </footer>
+  );
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className="luxe-bg">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
